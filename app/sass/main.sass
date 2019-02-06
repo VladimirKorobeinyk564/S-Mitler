@@ -7,7 +7,7 @@
 
 ::selection
 	background-color: $accent
-	color: #fff
+	color: $white
 
 body
 	font-size: 16px
@@ -17,6 +17,7 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
+	opacity: 1
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -24,11 +25,74 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+	&.ishome
+		.site-header
+			min-height: 700px
+			height: 100vh
+			background-color: $dark
+			color: $white
+			.top-line
+				padding-top: 20px
+				position: absolute
+				width: 100%
+				z-index: 1
+				.logo
+					img
+						width: 128px
+						height: auto
+						margin-left: 45px
+				.phone
+					position: absolute
+					right: 85px
+					top: 44px
+					font-family: firasans, sans-serif
+					font-size: 22px
+					white-space: nowrap
+
+					.fa
+						color: #555
+						font-size: 22px
+						margin-right: 5px
+				.hamburger
+					position: absolute
+					right: 0	
+					top: 30px
+					color: $white
+					.hamburger-box
+						width: 34px
+		.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+			border-radius: 0
+			width: 34px
+			height: 2px
+			background: $white
+
+
+													
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+
+section
+	background-color: #fff
+
+
+
+
+
+
+
+
+
+
 
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
+
 	&.img-width
 		width: 100%
 
