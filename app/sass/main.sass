@@ -31,6 +31,7 @@ body
 		&:required:valid
 			border-color: green
 
+
 	&.ishome
 		.site-header
 			min-height: 700px
@@ -40,7 +41,7 @@ body
 			.top-line
 				padding-top: 20px
 				position: absolute
-				width: 100%
+				width: $prc100
 				z-index: 1
 
 
@@ -125,7 +126,7 @@ body
 
 		.header-flex
 			display: flex
-			height: 100%
+			height: $prc100
 			position: relative
 			top: 0
 			.flex-center
@@ -148,7 +149,7 @@ body
 							&::before, &::after
 								content: ''
 								height: 1px
-								width: 100%
+								width: $prc100
 								position: relative
 								background: $white
 								display: inline-block 
@@ -175,7 +176,7 @@ body
 			display: flex
 			position: absolute
 			right: 0
-			height: 100%
+			height: $prc100
 			border-left: 1px solid rgba(#fff, 0.1)
 			top: 0
 			padding: 0 12.5px
@@ -206,7 +207,7 @@ body
 			position: absolute
 			bottom: 0
 			left: 0
-			width: 100%
+			width: $prc100
 			padding: 12.5px 0
 			border-top: 1px solid rgba(#fff, 0.1)
 			background: rgba(#151515, 0.15)
@@ -217,8 +218,106 @@ body
 				font-family: firasans, sans-serif
 
 
+	#my-content
+		.carousel-services
+			background-color: $dark
+			.owl-item
+				backface-visibility: inherit
+				&:nth-child(2n+2)
+					.carousel-services-item
+						flex-direction: column
+			&-item
+				color: $white
+				font-size: 18px
+				font-weight: 300
+				position: relative
+				display: flex
+				flex-direction: column-reverse
+				&:hover
+					.carousel-services-image
+						opacity: 1
+				.carousel-logo
+					text-align: center
+					img
+						width: 100px
+						height: auto
+						display: inline-block
+
+			&-image
+				background-size: cover
+				background-position: center
+				opacity: 0.7
+				transition: opacity 0.5s
+			&-content
+				position: relative
+				padding: 50px 10% 50px
+				.carousel-services-composition
+					width: 100%
+					margin: auto
+					text-align: center
+					.h3
+						font-weight: 800
+						font-size: 28px
+						margin-top: 5px
+						margin-bottom: 20px
+						span
+							font-weight: 300
+							font-size: 18px
+							display: block
+					.carousel-services-list
+						margin: 0
+						padding: 0
+						list-style-type: none
+						margin-bottom: 25px
+						li
+							padding: 9px
+							border-bottom: 1px solid rgba(#000, 0.12)
+							&:last-child
+								border-bottom: none
+							strong
+								font-family: firasans, sans-serif
+								color: #4a4a4a
+								.fa
+									font-size: 14px
+					.button-white
+						background: $white
+						color: $dark
+						&::after
+							background-color: rgba(#000, 0.6)
+							&:hover
+								&::after
+									background-color: rgba(#000, 0.2)
+							&:active
+								&::after
+									background-color: rgba(#000, 0.4)
+		.owl-nav
+			.owl-next, .owl-prev
+				position: absolute
+				top: 0
+				background: $white
+				width: 64px
+				height: 64px
+				font-size: 26px
+				text-align: center
+				transition-property: background, color
+				transition-duration: 0.5s
+				&:hover
+					background: #F3F3F3
+					color: #535353
+				.fa	
+					position: relative
+					line-height: 64px
+					color: $dark
+			.owl-next
+				right: 0
 
 
+
+
+	$colors: $blue, $red, $accent
+	@for $i from 1 through length($colors)
+		.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
+			background-color: nth($colors, $i)
 
 
 
@@ -253,7 +352,7 @@ section
         content: ''
         height: 4px
         bottom: 0
-        width: 100%
+        width: $prc100
         background-color: darken($accent, 50%)
         opacity: .18
         border-bottom-left-radius: 2px
@@ -276,11 +375,11 @@ section
 
 .img-responsive
 	display: block
-	max-width: 100%
+	max-width: $prc100
 	height: auto
 
 	&.img-width
-		width: 100%
+		width: $prc100
 
 .text-center
 	text-align: center
