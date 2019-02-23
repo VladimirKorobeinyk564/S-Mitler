@@ -87,13 +87,13 @@
       			<div class="header-contacts">
       				<div class="container">
       					<div class="row">
-      						<div class="col-md-4 col-sm-6">
+      						<div class="col-md-4 col-sm-6 col-xs-10">
       							<i class="fa fa-location-arrow"></i> г. Москва, ул. Ивана Бабушкина, 22c1
       						</div>
-      						<div class="col-md-4 col-sm-6 text-center head-phone">
+      						<div class="col-md-4 col-sm-6 col-xs-10 text-center head-phone">
       							<i class="fa fa-mobile"></i> +7 (495) 922-77-73
       						</div>
-      						<div class="col-md-4 hidden">
+      						<div class="col-md-4 hidden-sm col-xs-10">
       							<i class="fa fa-clock-o"></i> Время работы: ежедневно: 10:00 - 22:00
       						</div>
       					</div>
@@ -185,6 +185,41 @@
       							<img src="img/photos/small/foto-19.jpg" alt="Фото салона красоты">
       							<img src="img/photos/small/foto-23.jpg" alt="Фото салона красоты">
       						</div>
+      					</div>
+      				</div>
+      			</div>
+      		</section>
+      		<section class="s-call inverse" style="background-image: url(img/madama.jpg);">
+      			<div class="container">
+      				<div class="row">
+      					<div class="col-md-5 col-md-offset-7 col-sm-6 col-sm-offset-6">
+							<form class="callback">
+								<div class="success"><span>Спасибо за заявку!</span></div>
+
+								<!-- Hidden Required Fields -->
+								<input type="hidden" name="project_name" value="S&Mitler">
+								<input type="hidden" name="admin_email" value="vovakorobeinyk@gmail.com">
+								<input type="hidden" name="form_subject" value="Заявка с сайта S&Mitler">
+								<!-- END Hidden Required Fields -->
+								<input type="hidden" name="Страница" value="">
+
+								<div class="callback-logo"><img src="img/logo-2.svg" alt="S&Mitler - салон красоты в Москве"></div>
+								<div class="form-head h2">Оставить заявку</div>
+								<p>Оставьте заявку и мы перезвоним вам в течение 15 минут.</p>
+
+								<input type="text" name="Имя" placeholder="Ваше имя..." required>
+								<input type="text" name="Телефон" placeholder="Ваш телефон..." required>
+								<select name="Услуга">
+									<option value disabled selected>Выбрать услугу</option>
+									<option>Парикмахерский сервис</option>
+									<option>Косметологический сервис</option>
+									<option>Маникюрный сервис</option>
+									<option>Массаж и SPA</option>
+									<option>Солярий</option>
+								</select>
+								<button class="button button-white">Отправить</button>
+
+							</form>
       					</div>
       				</div>
       			</div>

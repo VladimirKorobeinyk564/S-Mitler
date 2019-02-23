@@ -1,4 +1,6 @@
 $(function() {
+
+	/* Mmenu */
 	$('#my-menu').mmenu({
   		extensions: [ 'theme-black', 'effect-menu-slide', 'pagedim-black',],
 		navbar: {
@@ -20,6 +22,8 @@ $(function() {
 		$menuBtn.removeClass('is-active');		
 	});
 
+
+	/* OwlCarousel */
 	$('.carousel-services').on('initialized.owl.carousel',function() {
 		setTimeout(function() {
 			carouselService()
@@ -47,6 +51,7 @@ $(function() {
 			}
 		}
 	});
+
 	function carouselService() {
 		$('.carousel-services-item').each(function(){
 			var ths = $(this),
@@ -59,11 +64,37 @@ $(function() {
 		var ths = $(this);
 		ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
 	});
-		$('section .h2').each(function() {
+
+	$('section .h2').each(function() {
 		var ths = $(this);
 		ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
-	})
+	});
 
+	/* Selectize */
+	
+	$('select').selectize({
+		create: true,
+	});
+
+	//E-mail Ajax Send
+	$("form.callback").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "/mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+			$(th).find('.success').addClass('active').css('display','flex').hide().fadeIn();
+			setTimeout(function() {
+				$(th).find('.success').removeClass('active').fadeOut();
+				// Done Functions
+				th.trigger("reset");
+			}, 3000);
+		});
+		return false;
+	});
+
+	//Resize	
 	function onResize() {
 		$('.carousel-services-content').equalHeights();
 	};onResize();

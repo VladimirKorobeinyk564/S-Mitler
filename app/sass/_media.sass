@@ -34,10 +34,18 @@
 							font-size: 48px
 		.header-contacts
 			font-size: 14px
+			text-align: center
 	#my-content
-		.carousel-services
-			.carousel-services-item
-				flex-direction: column
+		.s-services
+			.carousel-services
+				.carousel-services-item
+					flex-direction: column
+		section.s-call
+			background-size: cover
+			&::before
+				width: 100%
+			.callback
+				padding: 12% 0
 	/**/
 
 
@@ -46,6 +54,7 @@
 @media only screen and (max-width : 768px)
 	body.ishome
 		.header-contacts
+			text-align: left
 			.head-phone
 				text-align: left
 	/**/
@@ -64,6 +73,8 @@
 						p
 							span
 								font-size: 10px
+		.header-contacts
+			font-size: 12px
 		.s
 			&-king
 				p
