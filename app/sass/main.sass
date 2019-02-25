@@ -245,7 +245,7 @@ body
 				position: relative
 				padding: 50px 10% 50px
 				.carousel-services-composition
-					width: 100%
+					width: $prc100
 					margin: auto
 					text-align: center
 					.h3
@@ -272,26 +272,26 @@ body
 								color: #4a4a4a
 								.fa
 									font-size: 14px
-		.owl-nav
-			.owl-next, .owl-prev
-				position: absolute
-				top: 0
-				background: $white
-				width: 64px
-				height: 64px
-				font-size: 26px
-				text-align: center
-				transition-property: background, color
-				transition-duration: 0.5s
-				&:hover
-					background: #F3F3F3
-					color: #535353
-				.fa	
-					position: relative
-					line-height: 64px
-					color: $dark
-			.owl-next
-				right: 0
+			.owl-nav
+				.owl-next, .owl-prev
+					position: absolute
+					top: 0
+					background: $white
+					width: 64px
+					height: 64px
+					font-size: 26px
+					text-align: center
+					transition-property: background, color
+					transition-duration: 0.5s
+					&:hover
+						background: #F3F3F3
+						color: #535353
+					.fa	
+						position: relative
+						line-height: 64px
+						color: $dark
+				.owl-next
+					right: 0
 		.s
 			&-king, &-review, &-partners
 				padding: 5% 0
@@ -307,7 +307,7 @@ body
 							position: absolute
 							bottom: 10px
 							padding: 0 30px
-							width: 100%
+							width: $prc100
 					&__thumb
 						border: 4px solid $white
 						transition: border 0.5s ease
@@ -341,9 +341,9 @@ body
 				background-position: 25%
 				&::before
 					content: ''
-					width: 50%
+					width: $prc50
 					right: 0
-					height: 100%
+					height: $prc100
 					position: absolute
 					background: rgba($accent, 0.92)
 				.callback
@@ -381,7 +381,7 @@ body
 					input, textarea, select,
 					.selectize-input
 						color: $white
-						width: 100%
+						width: $prc100
 						margin-top: 17px
 
 						&::-webkit-input-placeholder
@@ -441,14 +441,109 @@ body
 							.option
 								padding: 8px 20px
 								&.active
-									background: lighten($accent, 15) 
+									background: lighten($accent, 15)
+			&-review
+				.reviews
+					text-align: center
+					.owl-dots
+						width: $prc100
+						text-align: center
+						margin-top: 60px
+						.owl-dot
+							width: 8px
+							height: 8px
+							background: $white
+							border-radius: $prc50
+							display: inline-block
+							margin: 5px
+							transition: background, transform 0.5s ease
+							&.active
+								background: $accent
+								transform: scale(1.3)
+					.review
+						&-header
+							font-family: 'Times New Roman', sans-serif
+							font-style: italic
+							font-size: 30px
+							font-weight: bold
+						&-data
+							font-family: 'Times New Roman', sans-serif
+							font-style: italic
+							font-size: 15px
+							color: #888
+						&-stars
+							margin: 18px 0 30px
+							font-size: 14px
+							color: $accent
+							.fa
+								margin: 0 2px
+						&-text
+							color: #95989a
 
+				.quotes
+					position: absolute
+					width: $prc100
+					&::after, &::before
+						content: ',,'
+						position: absolute
+						top: 160px
+						font-size: 56px
+						color: $accent
+						font-family: 'Times New Roman', sans-serif
+						font-weight: bold
+						line-height: 0
+						transform: rotate(180deg)
+						display: block
+					&::before
+						top: 200px
+						left: -60px
+					&::after
+						right: -60px
+						transform: rotate(0)
+			&-partners.section-overlay
+				&::before
+					background: $white
+				.h2
+					span
+						color: $accent
+				.partners
+					.partner
+						height: $prc100
+						display: flex
+						margin: auto
+					.owl-stage
+						display: flex
+						.owl-item
+							margin-top: 30px
+							img
+								max-width: $prc100
+								width: auto
+								display: inline-block
+								margin: auto
+					.owl-nav
+						position: absolute
+						top: 0
+						width: $prc100
+						z-index: 2
+						> div
+							position: absolute
+							top: 50px
+							color: #999
+							font-size: 30px
+							transition: opacity 0.5s ease
+							padding: 0 10px
+							&:hover
+								opacity: 0.6
+							&.owl-prev
+								left: -60px 
+							&.owl-next
+								right: -60px
 
-		.section-overley
+		.section-overlay
 			&::before
 				content: ''
-				width: 100%
-				height: 100%
+				width: $prc100
+				height: $prc100
 				position: absolute
 				top: 0
 				left: 0
@@ -475,12 +570,12 @@ section
 	&.inverse
 		color: $white
 		background: $dark
-		.h2
-			font-size: 30px
-			font-weight: 800
-			color: $accent
-			span
-				color: $white
+	.h2
+		font-size: 30px
+		font-weight: 800
+		color: $accent
+		span
+			color: $white
 
 .button
     display: inline-block

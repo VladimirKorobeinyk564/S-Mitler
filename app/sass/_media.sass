@@ -43,7 +43,7 @@
 		section.s-call
 			background-size: cover
 			&::before
-				width: 100%
+				width: $prc100
 			.callback
 				padding: 12% 0
 	/**/
@@ -57,6 +57,17 @@
 			text-align: left
 			.head-phone
 				text-align: left
+		.s-review
+			.quotes
+				display: none
+		.s-partners
+			.partners
+				.owl-nav
+					> div
+						&.owl-prev
+							left: 0 !important
+						&.owl-next
+							right: 0 !important
 	/**/
 
 
@@ -76,6 +87,11 @@
 		.header-contacts
 			font-size: 12px
 		.s
+			&-services
+				.carousel-services
+					.carousel-services-composition
+						h3.h3
+							font-size: 22px !important
 			&-king
 				p
 					font-size: 14px
