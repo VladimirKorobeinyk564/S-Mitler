@@ -173,28 +173,28 @@ body
 			border-left: 1px solid rgba(#fff, 0.1)
 			top: 0
 			padding: 0 12.5px
-			.social
-				margin: auto
-				ul,li
-					margin: 0
-					padding: 0
-					list-style-type: none
-					a
-						text-decoration: none
-						color: #2c2c2c
-						font-size: 17px
-						display: block
-						background: rgba(#fff, 0.2)
-						height: 38px 
-						width: 38px
-						border-radius: 50%
-						position: relative
-						text-align: center
-						margin: 18px 0
-						line-height: 38px
-						transition: background 0.5s
-						&:hover
-							background: rgba(#fff, 0.4)
+		.social
+			margin: auto
+			ul,li
+				margin: 0
+				padding: 0
+				list-style-type: none
+				a
+					text-decoration: none
+					color: #2c2c2c
+					font-size: 17px
+					display: block
+					background: rgba(#fff, 0.2)
+					height: 38px 
+					width: 38px
+					border-radius: 50%
+					position: relative
+					text-align: center
+					margin: 18px 0
+					line-height: 38px
+					transition: background 0.5s
+					&:hover
+						background: rgba(#fff, 0.4)
 		.header-contacts
 			display: flex
 			position: absolute
@@ -538,7 +538,6 @@ body
 								left: -60px 
 							&.owl-next
 								right: -60px
-
 		.section-overlay
 			&::before
 				content: ''
@@ -548,16 +547,177 @@ body
 				top: 0
 				left: 0
 				background: $over
-				opacity: 0.92		
+				opacity: 0.92
+	#my-footer
+		.main-footer
+			background: #242424
+			padding: 5% 0
+			color: $white
+			font-size: 14px
+			.footer-column
+				margin: 15px 0
+				p
+					position: relative
+					font-size: 15px
+				.logo-footer
+					width: 125px
+					height: auto
+				.social-text
+					color: #666
+					padding: 0
+					margin:
+						bottom: 15px
+						top: 15px
+				.social-footer
+					.social
+						ul
+							li
+								display: inline-block
+								margin: 2.5px
+								a
+									color: #ABABAB
+									margin-bottom: 0
+									transition-property: background, color
+									transition-duration: 0.5s
+									&:hover
+										color: rgba($white, 0.8)
+				.footer-menu
+					ul
+						padding: 0
+						margin: 0
+						list-style-type: none
+						li.active
+							a
+								color: $accent
+								&::before
+									color: $accent
+						a
+							color: #979797
+							transition: color 0.5s
+							display: inline-block
+							padding: 3.5px 0
+							text-decoration: underline
+							padding-left: 20px
+							position: relative
+							&:hover, &:focus
+								color: $accent
+								&::before
+									color: $accent
+							&::before
+								position: absolute
+								font-family: fontawesome
+								content: '\f219'
+								left: 0
+								font-size: 12px
+								transition: color 0.5s ease
+								top: 6px
+								margin-right: 5px
+				.footer-contacts
+					.footer-address, .footer-time, .footer-phone
+						position: relative
+						font-size: 15px
+						padding-left: 20px
+						margin: 0 0 20px
+						.fa
+							position: absolute
+							left: 0
+							top: 5px
+							font-size: 18px
+							color: #555
+					.footer-phone
+						.footer-number
+							font-size: 26px
+							font-family: firasans, sans-serif
+							padding-top: 10px
+							display: block
+						.fa
+							top: 22px
+							font-size: 22px
+							left: 3px
+				.map
+					max-height: 200px
+					opacity: 0.7
+					transition: opacity 0.5s ease
+					&:hover
+						opacity: 1
 
-
+	.top
+		position: fixed
+		bottom: 25px
+		right: -100px
+		background: #e0e0e0
+		border-radius: $prc50
+		color: #666
+		font-size: 26px
+		width: 50px
+		height: 50px
+		z-index: 55
+		text-align: center
+		line-height: 50px
+		cursor: pointer
+		transition: all 0.3s ease
+		opacity: 0.5
+		i
+			line-height: 0
+		&:hover
+			color: $white
+			background: $accent
+			opacity: 1
+		&.active
+			right: 25px
 
 	$colors: $blue, $red, $accent
 	@for $i from 1 through length($colors)
 		.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
 			background-color: nth($colors, $i)
 
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
 
+
+.preloader
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 100
+	background: $dark
+	.pulse
+		position: relative
+		left: $prc50
+		top: 50vh
+		margin:
+			left: -40px
+			top: -40px
+		&::before, &::after
+			content: ''
+			border: 5px solid #323232
+			width: 80px
+			height: 80px
+			border-radius: 500px
+			position: absolute
+		&::before
+			animation: pulse-outer 0.8s ease-in infinite
+		&::after
+			animation: pulse-inner 0.8s linear infinite
+
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	100%
+		@include opacity(100)
+		transform: scale(1)
 
 section, header
 	position: relative
