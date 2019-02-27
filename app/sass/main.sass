@@ -51,6 +51,7 @@ body
 					font-family: firasans, sans-serif
 					font-size: 22px
 					white-space: nowrap
+					text-decoration: none
 
 					.fa
 						color: #565656
@@ -644,7 +645,7 @@ body
 	.top
 		position: fixed
 		bottom: 25px
-		right: -100px
+		right: -1000px
 		background: #e0e0e0
 		border-radius: $prc50
 		color: #666
@@ -665,6 +666,7 @@ body
 			opacity: 1
 		&.active
 			right: 25px
+			display: block
 
 	$colors: $blue, $red, $accent
 	@for $i from 1 through length($colors)

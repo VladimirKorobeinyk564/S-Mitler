@@ -1,7 +1,7 @@
 var syntax        = 'sass', // Syntax: sass or scss;
-		gulpversion   = '4'; // Gulp version: 3 or 4
+	gulpversion   = '4'; // Gulp version: 3 or 4
 
-var gulp          = require('gulp'),
+var 	gulp          = require('gulp'),
 		gutil         = require('gulp-util' ),
 		sass          = require('gulp-sass'),
 		browserSync   = require('browser-sync'),
@@ -89,3 +89,4 @@ if (gulpversion == 4) {
 	});
 	gulp.task('default', gulp.parallel('styles', 'scripts', 'browser-sync', 'watch'));
 }
+
